@@ -1,0 +1,21 @@
+{
+  "folders": [{ "id": 17, "name": "Community" }],
+  "lists": [
+    { "id": 1, "name": "Fall League", "folderId": 17 },
+    { "id": 2, "name": "Clinics", "folderId": 17 }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "email": "alex@example.com",
+      "attributes": { "FIRSTNAME": "Alex", "EXT_ID": "member-1" },
+      "listIds": [1]
+    },
+    {
+      "id": 2,
+      "email": "sam@example.com",
+      "attributes": { "FIRSTNAME": "Sam", "EXT_ID": "member-2" },
+      "listIds": [2]
+    }
+  ]
+}

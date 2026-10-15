@@ -1,0 +1,28 @@
+{
+  "provider": "Airtable",
+  "apiPrefix": "/v0/{baseId}",
+  "verification": "Extracted from FTLO's local twin; local contract tests, not live vendor verification",
+  "routes": [
+    "GET /v0/{baseId}/{table}",
+    "GET /v0/{baseId}/{table}/{recordId}",
+    "POST /v0/{baseId}/{table}",
+    "PATCH /v0/{baseId}/{table}",
+    "PATCH /v0/{baseId}/{table}/{recordId}",
+    "DELETE /v0/{baseId}/{table}/{recordId}"
+  ],
+  "features": [
+    "Caller-supplied schema, seed data and rollup functions",
+    "Linked records with inverse links, lookups and selected formula functions",
+    "Field projection, filterByFormula, maxRecords and pagination",
+    "Snapshot and restore; onChange callback for persistence"
+  ],
+  "unsupported": [
+    "Authentication and authorization enforcement",
+    "Schema mutation, webhooks, attachments and metadata API",
+    "General rollup expressions; callers supply aggregate functions",
+    "Field types and formula functions outside base.ts and formula.ts",
+    "Exact vendor error envelopes and status precedence",
+    "Atomic batch mutations, rate limits and automatic fault injection"
+  ],
+  "unsupportedRequests": "501 TWIN_UNSUPPORTED; unknown tables and records return 404; validation errors return 422"
+}

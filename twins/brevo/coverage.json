@@ -1,0 +1,44 @@
+{
+  "provider": "Brevo",
+  "apiPrefix": "/v3",
+  "verification": "Local contract tests against documented behavior; not verified against a live Brevo account",
+  "routes": [
+    "GET /v3/contacts",
+    "POST /v3/contacts",
+    "GET /v3/contacts/{idOrEmail}",
+    "PUT /v3/contacts/{idOrEmail}",
+    "DELETE /v3/contacts/{idOrEmail}",
+    "GET /v3/contacts/lists",
+    "POST /v3/contacts/lists",
+    "GET /v3/contacts/lists/{id}",
+    "GET /v3/contacts/lists/{id}/contacts",
+    "GET /v3/contacts/folders",
+    "POST /v3/contacts/folders",
+    "GET /v3/contacts/folders/{id}/lists"
+  ],
+  "controls": [
+    "GET /_twin/state",
+    "GET /_twin/requests",
+    "POST /_twin/reset",
+    "POST /_twin/faults"
+  ],
+  "authentication": "api-key header; default local key is twin-key",
+  "pagination": "limit, offset, sort; contacts max 1000, list contacts max 500, lists and folders max 50",
+  "unsupported": [
+    "OAuth, webhooks, email sending, campaigns, contact merging, imports and exports",
+    "Contacts without email, ext_id and phone identifier lookup",
+    "Attribute definitions and type enforcement; attributes accept arbitrary string, finite number, boolean or string-array values",
+    "Provider error precedence, full response metadata and exact error text",
+    "Date filters and query parameters other than listed pagination controls",
+    "List and folder update/delete; list membership add/remove endpoints (use contact listIds/unlinkListIds)",
+    "Provider latency, automatic rate limiting and network-level failures"
+  ],
+  "unsupportedRequests": "501 twin_unsupported; malformed supported inputs return 400; missing records return 404",
+  "sources": [
+    "https://developers.brevo.com/reference/create-contact",
+    "https://developers.brevo.com/reference/update-contact",
+    "https://developers.brevo.com/reference/get-contacts",
+    "https://developers.brevo.com/reference/get-contacts-from-list",
+    "https://developers.brevo.com/reference/create-list"
+  ]
+}

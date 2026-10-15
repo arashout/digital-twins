@@ -1,0 +1,38 @@
+{
+  "name": "@arashout/digital-twins",
+  "version": "0.1.0",
+  "private": true,
+  "bin": {
+    "digital-twins": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "twins/*/coverage.json",
+    "examples"
+  ],
+  "type": "module",
+  "exports": {
+    "./airtable": {
+      "types": "./dist/twins/airtable/index.d.ts",
+      "default": "./dist/twins/airtable/index.js"
+    },
+    "./brevo": {
+      "types": "./dist/twins/brevo/index.d.ts",
+      "default": "./dist/twins/brevo/index.js"
+    }
+  },
+  "scripts": {
+    "start": "node cli.ts",
+    "test": "node --test twins/*/*.test.ts",
+    "check": "tsc --noEmit && npm test",
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
