@@ -67,7 +67,7 @@ const COMPUTED = new Set([
   "autoNumber",
 ]);
 
-const TEXT = new Set(["singleLineText", "multilineText", "email", "url", "phoneNumber"]);
+const TEXT = new Set(["singleLineText", "multilineText", "richText", "email", "url", "phoneNumber"]);
 
 const NUMBER = new Set(["number", "currency", "duration", "percent"]);
 
